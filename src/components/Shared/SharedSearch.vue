@@ -4,7 +4,7 @@ import IconSearch from '../Icons/IconSearch.vue'
 </script>
 
 <template>
-  <form @submit="onSearch">
+  <form>
     <div class="search" :class="classes">
       <input
         class="search__input"
