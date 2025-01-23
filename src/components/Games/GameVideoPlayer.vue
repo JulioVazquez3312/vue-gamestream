@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <div class="game-video-player">
-    <video controls ref="videoRef">
+    <video controls>
       <source :src="video" type="video/mp4" />
     </video>
   </div>
