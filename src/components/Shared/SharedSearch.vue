@@ -22,7 +22,9 @@ const searchClasses = computed( () => ({
 </script>
 
 <template>
-  <form>
+  <form @submit.prevent="() => {
+    emit('search')
+  }">
     {{ input }}
     <div class="search" :class="searchClasses" >
       <input

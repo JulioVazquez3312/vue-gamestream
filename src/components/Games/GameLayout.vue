@@ -15,7 +15,6 @@ const { games } = defineProps({
 })
 
 const onSearch = () => {
-
   const termSearch = searchInput.value.toLocaleLowerCase()
 
   if(termSearch.trim() === ''){
@@ -36,7 +35,6 @@ const onSearch = () => {
   <section>
     <slot name="title" />
     <h2 v-if="slots.title === undefined">Recent games</h2>
-    {{ searchInput }}
     <div class="game-layout">
       <SharedSearch @search="onSearch" v-model="searchInput" class="my-class" id="search-form" />
       <slot />

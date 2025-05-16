@@ -19,6 +19,7 @@ const { state } = useFetch(API_URL, (json) => {
 const setGameView = (filteredGames) => {
   gamesView.value = filteredGames
 }
+
 </script>
 
 <template>
