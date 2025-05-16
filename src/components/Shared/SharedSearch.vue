@@ -16,20 +16,18 @@ const onBlur = () => {
 }
 
 const searchClasses = computed(() => ({'search--active': isActive.value}))
+
 </script>
 
 <template>
-  <form @submit.prevent="() => {
-    emit('search')
-  }">
+  <form>
+    {{ input }}
     <div class="search" :class="searchClasses" >
       <input
         v-model="model"
         class="search__input"
         type="text"
         placeholder="Buscar"
-        @focus="onFocus"
-        @blur="onBlur"
       />
       <button class="search__submit" type="submit" v-bind="$attrs">
         <IconSearch />
