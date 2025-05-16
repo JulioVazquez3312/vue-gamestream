@@ -5,17 +5,19 @@ import IconSearch from '../Icons/IconSearch.vue'
 const model = defineModel()
 const emit = defineEmits(['search'])
 
-const isActive = ref(false)
+const onBlur = () => {
+  isActive.value = false
+}
 
 const onFocus = () => {
   isActive.value = true
 }
 
-const onBlur = () => {
-  isActive.value = false
-}
+const isActive = ref(false)
 
-const searchClasses = computed(() => ({'search--active': isActive.value}))
+const searchClasses = computed( () => ({
+  'search--active': isActive.value
+}))
 
 </script>
 
@@ -28,6 +30,8 @@ const searchClasses = computed(() => ({'search--active': isActive.value}))
         class="search__input"
         type="text"
         placeholder="Buscar"
+        @focus="onFocus"
+        @blur="onBlur"
       />
       <button class="search__submit" type="submit" v-bind="$attrs">
         <IconSearch />
