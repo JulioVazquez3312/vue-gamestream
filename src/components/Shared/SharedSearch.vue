@@ -25,7 +25,6 @@ const searchClasses = computed( () => ({
   <form @submit.prevent="() => {
     emit('search')
   }">
-    {{ input }}
     <div class="search" :class="searchClasses" >
       <input
         v-model="model"
